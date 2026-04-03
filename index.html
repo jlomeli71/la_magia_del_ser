@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Estado del Ser — Álbum de Meditación Ho'oponopono</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── DESIGN TOKENS ── */
+    :root {
+      --cream:   #EEFABD;
+      --sage:    #A0D585;
+      --slate:   #6984A9;
+      --navy:    #263B6A;
+      --white:   #FAFFF5;
+      --ink:     #1C2A45;
+      --gold:    #C8A84B;
+      --rose:    #D4857A;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Nunito', sans-serif;
+
+      --radius: 16px;
+      --shadow: 0 4px 32px rgba(38,59,106,0.10);
+      --shadow-hover: 0 8px 48px rgba(38,59,106,0.18);
+      --transition: 0.35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--slate); border-radius: 3px; }
+
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250,255,245,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(160,213,133,0.3);
+      box-shadow: 0 2px 20px rgba(38,59,106,0.07);
+      transition: var(--transition);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .nav-logo span {
+      color: var(--slate);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: var(--transition);
+      opacity: 0.75;
+    }
+
+    .nav-links a:hover {
+      background: var(--cream);
+      color: var(--slate);
+      opacity: 1;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.4rem;
+      border: none;
+      background: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(160,213,133,0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(105,132,169,0.15) 0%, transparent 70%),
+        var(--white);
+    }
+
+    /* Decorative floating circles */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-orb:nth-child(1) {
+      width: 350px; height: 350px;
+      top: -80px; right: -80px;
+      background: radial-gradient(circle, rgba(160,213,133,0.18) 0%, transparent 70%);
+      animation-delay: 0s;
+    }
+    .hero-orb:nth-child(2) {
+      width: 250px; height: 250px;
+      bottom: 60px; left: -60px;
+      background: radial-gradient(circle, rgba(105,132,169,0.15) 0%, transparent 70%);
+      animation-delay: -3s;
+    }
+    .hero-orb:nth-child(3) {
+      width: 180px; height: 180px;
+      top: 40%; left: 8%;
+      background: radial-gradient(circle, rgba(238,250,189,0.5) 0%, transparent 70%);
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-20px) scale(1.03); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.35rem 1.2rem;
+      background: rgba(105,132,169,0.12);
+      border: 1px solid rgba(105,132,169,0.3);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      animation: fadeUp 0.9s ease 0.1s both;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--slate);
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+
+    .hero-quote {
+      font-size: 0.92rem;
+      color: var(--ink);
+      opacity: 0.65;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 0.9s ease 0.3s both;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.9s ease 0.4s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(38,59,106,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--slate);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(38,59,106,0.30);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn-outline:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    /* Petal decoration */
+    .petal-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 3rem 0 2rem;
+    }
+    .petal-divider::before,
+    .petal-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(105,132,169,0.3));
+    }
+    .petal-divider::after {
+      background: linear-gradient(90deg, rgba(105,132,169,0.3), transparent);
+    }
+    .petal-icon { font-size: 1.1rem; opacity: 0.7; }
+
+    /* ── SECTION LAYOUT ── */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--slate);
+    }
+
+    .section-text {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--ink);
+      opacity: 0.82;
+      max-width: 680px;
+    }
+
+    /* ── HISTORY ── */
+    #historia { background: var(--white); }
+
+    .history-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+
+    .history-visual {
+      position: relative;
+    }
+
+    .history-card {
+      background: linear-gradient(135deg, var(--cream), rgba(160,213,133,0.3));
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .history-card::before {
+      content: '🌺';
+      position: absolute;
+      top: -10px; right: -10px;
+      font-size: 5rem;
+      opacity: 0.12;
+      transform: rotate(15deg);
+    }
+
+    .history-card blockquote {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .history-card cite {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-style: normal;
+    }
+
+    /* ── PHRASES ── */
+    #frases {
+      background: linear-gradient(180deg, var(--white) 0%, rgba(238,250,189,0.4) 100%);
+    }
+
+    .phrases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .phrase-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border-top: 4px solid;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phrase-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .phrase-card:nth-child(1) { border-color: var(--sage); }
+    .phrase-card:nth-child(2) { border-color: var(--slate); }
+    .phrase-card:nth-child(3) { border-color: var(--gold); }
+    .phrase-card:nth-child(4) { border-color: var(--rose); }
+
+    .phrase-emoji { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+    .phrase-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .phrase-text {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--ink);
+      opacity: 0.78;
+    }
+
+    /* ── BENEFITS ── */
+    #beneficios {
+      background: var(--white);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: rgba(238,250,189,0.4);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .benefit-item:hover {
+      background: rgba(160,213,133,0.25);
+      transform: translateX(4px);
+    }
+
+    .benefit-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .benefit-title {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .benefit-text {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      opacity: 0.75;
+    }
+
+    /* ── TRIGGER WORDS ── */
+    #palabras {
+      background: linear-gradient(180deg, rgba(238,250,189,0.3) 0%, var(--white) 100%);
+    }
+
+    .words-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .word-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: var(--transition);
+      border-left: 3px solid var(--sage);
+    }
+
+    .word-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--slate);
+    }
+
+    .word-emoji { font-size: 1.4rem; flex-shrink: 0; }
+
+    .word-name {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.92rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .word-desc {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      opacity: 0.72;
+    }
+
+    /* ── TRAVELER GUIDE ── */
+    #guia {
+      background: linear-gradient(135deg, rgba(105,132,169,0.06) 0%, var(--white) 100%);
+    }
+
+    .tracklist {
+      margin-top: 2.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .track-item {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .track-item:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .track-item.new-song {
+      border-right: 3px solid var(--rose);
+    }
+
+    .track-num {
+      width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--cream), rgba(160,213,133,0.4));
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .track-item.new-song .track-num {
+      background: linear-gradient(135deg, rgba(212,133,122,0.2), rgba(200,168,75,0.2));
+    }
+
+    .track-info {}
+
+    .track-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .track-purpose {
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-style: italic;
+    }
+
+    .track-new-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(212,133,122,0.15);
+      color: var(--rose);
+      border: 1px solid rgba(212,133,122,0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .track-yt {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--slate);
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── GUIDE DESCRIPTIONS (shown on click) ── */
+    .track-description {
+      display: none;
+      grid-column: 1 / -1;
+      margin-top: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: rgba(238,250,189,0.5);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--ink);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .track-item.expanded .track-description { display: block; }
+    .track-item.expanded { flex-wrap: wrap; display: grid; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── LYRICS ── */
+    #letras {
+      background: var(--white);
+    }
+
+    .lyrics-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1.5px solid rgba(105,132,169,0.3);
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      opacity: 0.7;
+    }
+
+    .tab-btn:hover { opacity: 1; border-color: var(--slate); color: var(--slate); }
+    .tab-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+      opacity: 1;
+    }
+    .tab-btn.new-tab { border-color: rgba(212,133,122,0.4); }
+    .tab-btn.new-tab.active { background: var(--rose); border-color: var(--rose); }
+
+    .lyric-panel {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+    .lyric-panel.active { display: block; }
+
+    .lyric-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--cream), rgba(238,250,189,0.6));
+      border-radius: var(--radius);
+    }
+
+    .lyric-num {
+      width: 64px; height: 64px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--white);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(38,59,106,0.1);
+    }
+
+    .lyric-meta {}
+    .lyric-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .lyric-purpose {
+      font-size: 0.85rem;
+      color: var(--slate);
+      font-style: italic;
+    }
+
+    .lyric-yt-link {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(105,132,169,0.1);
+      border-radius: 999px;
+      color: var(--slate);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.6;
+      border: 1px solid rgba(105,132,169,0.2);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .lyric-content {
+      font-size: 0.94rem;
+      line-height: 2;
+      color: var(--ink);
+      white-space: pre-wrap;
+      padding: 0.5rem 0;
+    }
+
+    .lyric-content .section-tag {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+    }
+
+    .lyric-content .chorus {
+      background: rgba(238,250,189,0.6);
+      border-left: 3px solid var(--sage);
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 0.5rem 0;
+    }
+
+    .lyric-content .bridge {
+      background: rgba(105,132,169,0.08);
+      border-left: 3px solid var(--slate);
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 0.5rem 0;
+      font-style: italic;
+    }
+
+    .suno-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(38,59,106,0.04);
+      border: 1px solid rgba(38,59,106,0.1);
+      border-radius: var(--radius);
+    }
+
+    .suno-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      opacity: 0.7;
+    }
+
+    .suno-prompt {
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      color: var(--slate);
+      line-height: 1.6;
+      background: rgba(105,132,169,0.08);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      max-width: 500px;
+      margin: 0.5rem auto;
+      line-height: 1.7;
+    }
+
+    footer .footer-phrases {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── SECTION STRIPE ── */
+    .section-stripe {
+      background: linear-gradient(90deg, var(--cream), rgba(160,213,133,0.25));
+      padding: 4rem 2rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(250,255,245,0.97);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(160,213,133,0.3);
+        gap: 0.25rem;
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+
+      .history-grid { grid-template-columns: 1fr; }
+      .lyric-header { flex-direction: column; }
+      .lyric-yt-link { margin-left: 0; }
+      .track-item { grid-template-columns: 44px 1fr; }
+      .track-yt { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">El Estado <span>del Ser</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#frases">Frases</a></li>
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#palabras">Herramientas</a></li>
+      <li><a href="#guia">El Viajero</a></li>
+      <li><a href="#letras">Letras</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Álbum de Meditación · Ho'oponopono</span>
+    <h1 class="hero">El Estado<br>del Ser</h1>
+    <p class="hero-subtitle">Un viaje de sanación a través del sonido y la conciencia</p>
+    <p class="hero-quote">"La paz comienza en el interior. Cuando limpias tus memorias, el mundo a tu alrededor se transforma." — Morrnah Simeona</p>
+    <div class="hero-cta">
+      <a href="#guia" class="btn btn-primary">🎵 Explorar el Álbum</a>
+      <a href="#historia" class="btn btn-outline">Conocer más</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HISTORIA ══════════════ -->
+<section id="historia">
+  <div class="section">
+    <span class="section-label reveal">Orígenes</span>
+    <h2 class="section-title reveal">La Historia del<br><em>Ho'oponopono</em></h2>
+
+    <div class="history-grid">
+      <div>
+        <p class="section-text reveal">
+          El <strong>Ho'oponopono</strong> es una antigua técnica hawaiana de reconciliación y perdón. En sus orígenes, era un ritual comunitario guiado por un <em>kahuna</em> (sanador), donde familias y aldeas resolvían conflictos colectivos a través del diálogo, la oración y el perdón mutuo.
+        </p>
+        <div class="petal-divider reveal"><span class="petal-icon">🌺</span></div>
+        <p class="section-text reveal">
+          La maestra hawaiana <strong>Morrnah Nalamaku Simeona</strong> (1913–1992) lo transformó radicalmente en un proceso <strong>individual y espiritual</strong>. Su visión introduce la premisa de la <strong>Responsabilidad Absoluta</strong>: cada experiencia en nuestra vida es el reflejo de memorias almacenadas en nuestro subconsciente —el <em>Unihipili</em> o <strong>Niño Interior</strong>.
+        </p>
+        <div class="petal-divider reveal"><span class="petal-icon">🌿</span></div>
+        <p class="section-text reveal">
+          Al limpiar estas memorias, abrimos un canal para que llegue la <strong>Inspiración Divina</strong>. El <strong>Dr. Ihaleakalá Hew Len</strong> popularizó este método al mundo moderno, demostrando cómo la limpieza interior transforma no solo nuestra experiencia, sino también la realidad que nos rodea.
+        </p>
+      </div>
+      <div class="history-visual reveal">
+        <div class="history-card">
+          <blockquote>"No busques culparte, sino reconocer que existe una memoria en tu subconsciente que ha manifestado esta realidad y que ahora eliges liberar con amor."</blockquote>
+          <cite>— Principio del Ho'oponopono Moderno</cite>
+        </div>
+        <br>
+        <div class="history-card" style="background: linear-gradient(135deg, rgba(105,132,169,0.12), rgba(238,250,189,0.4));">
+          <blockquote>"El Estado del Ser es ese espacio de paz, amor y claridad al que llegamos cuando las memorias se limpian: el estado de Cero."</blockquote>
+          <cite>— El Estado del Ser</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FRASES ══════════════ -->
+<section id="frases" class="section-stripe">
+  <div class="section">
+    <span class="section-label reveal">El Mantra Central</span>
+    <h2 class="section-title reveal">Las 4 Frases <em>Sagradas</em></h2>
+    <p class="section-text reveal">Estas cuatro frases son las herramientas más poderosas de la práctica. No son palabras mágicas; son intenciones profundas dirigidas a nuestra Divinidad interior y a las memorias que piden ser liberadas.</p>
+
+    <div class="phrases-grid" style="margin-top:2.5rem">
+      <div class="phrase-card reveal">
+        <span class="phrase-emoji">🌿</span>
+        <div class="phrase-title">"Lo siento"</div>
+        <p class="phrase-text">Reconoces que algo dentro de ti —una memoria, un patrón, una creencia— ha contribuido a crear esta experiencia. No hay culpa, solo <strong>responsabilidad consciente</strong>. Es el primer paso hacia la libertad.</p>
+      </div>
+      <div class="phrase-card reveal">
+        <span class="phrase-emoji">🙏</span>
+        <div class="phrase-title">"Por favor, perdóname"</div>
+        <p class="phrase-text">Le pides a tu propia Divinidad interior la gracia de poder perdonarte a ti mismo. Es el acto más valiente de amor propio: <strong>soltar el peso del juicio</strong> sobre ti mismo.</p>
+      </div>
+      <div class="phrase-card reveal">
+        <span class="phrase-emoji">🌟</span>
+        <div class="phrase-title">"Gracias"</div>
+        <p class="phrase-text">La gratitud es una frecuencia de apertura total. Expresas tu fe absoluta en que el proceso de limpieza ya está ocurriendo. Es una declaración de <strong>confianza incondicional</strong>.</p>
+      </div>
+      <div class="phrase-card reveal">
+        <span class="phrase-emoji">❤️</span>
+        <div class="phrase-title">"Te amo"</div>
+        <p class="phrase-text">La frase transmutadora por excelencia. El amor disuelve la energía estancada, restaura el flujo natural de la vida y reconecta directamente con lo Divino. Es el <strong>retorno al hogar</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BENEFICIOS ══════════════ -->
+<section id="beneficios">
+  <div class="section">
+    <span class="section-label reveal">Transformación Interior</span>
+    <h2 class="section-title reveal">Beneficios de la <em>Práctica</em></h2>
+    <p class="section-text reveal">La práctica regular del Ho'oponopono transforma gradualmente nuestra experiencia de vida desde adentro hacia afuera.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">🕊️</span>
+        <div>
+          <div class="benefit-title">Paz Interior</div>
+          <p class="benefit-text">Libera el estrés, la ansiedad y las emociones negativas. Crea un espacio de calma que no depende de las circunstancias externas.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">🧠</span>
+        <div>
+          <div class="benefit-title">Claridad Mental</div>
+          <p class="benefit-text">Detiene el ciclo de pensamientos repetitivos. La mente se vuelve más silenciosa y receptiva a la intuición y la creatividad.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">💚</span>
+        <div>
+          <div class="benefit-title">Bienestar Físico</div>
+          <p class="benefit-text">Al limpiar el estrés emocional, el cuerpo responde: mejora la salud cardiovascular y el sistema inmunológico.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">🤝</span>
+        <div>
+          <div class="benefit-title">Armonía en Relaciones</div>
+          <p class="benefit-text">Al limpiar nuestra percepción de los demás, los vínculos se transforman. Dejamos de proyectar miedos y nos relacionamos desde el amor.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">✨</span>
+        <div>
+          <div class="benefit-title">Conexión Espiritual</div>
+          <p class="benefit-text">Abre el canal con nuestra Divinidad interior, permitiendo que la inspiración, la sincronicidad y la gracia fluyan naturalmente.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <span class="benefit-icon">🌱</span>
+        <div>
+          <div class="benefit-title">Empoderamiento Personal</div>
+          <p class="benefit-text">Al comprender que somos responsables de nuestra experiencia, también comprendemos que tenemos la capacidad de transformarla.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PALABRAS GATILLO ══════════════ -->
+<section id="palabras" class="section-stripe">
+  <div class="section">
+    <span class="section-label reveal">Herramientas de Limpieza</span>
+    <h2 class="section-title reveal">Palabras <em>Gatillo</em></h2>
+    <p class="section-text reveal">Las palabras gatillo son atajos de limpieza que el Ho'oponopono pone a nuestra disposición para situaciones específicas. Son llaves que abren puertas particulares de nuestra mente subconsciente.</p>
+
+    <div class="words-grid">
+      <div class="word-card reveal"><span class="word-emoji">🌧️</span><div><div class="word-name">Llovizna</div><p class="word-desc">Borra memorias de escasez económica, miedos al dinero y creencias de carencia.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🐦</span><div><div class="word-name">Colibrí</div><p class="word-desc">Atrae la prosperidad y la alegría; cancela la ansiedad financiera.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">💧</span><div><div class="word-name">Gota de Rocío</div><p class="word-desc">Transforma memorias de dolor, tristeza o miedo en algo fresco y nuevo.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🧊</span><div><div class="word-name">Hielo Azul</div><p class="word-desc">Alivia el dolor físico y el sufrimiento emocional; enfría memorias traumáticas.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🔑</span><div><div class="word-name">Llave de la Luz</div><p class="word-desc">Apaga programas mentales dolorosos y trae claridad en momentos de conflicto.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🪰</span><div><div class="word-name">Papel para Moscas</div><p class="word-desc">Atrapa pensamientos de ira y juicio antes de que escalen; útil en conflictos.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🍂</span><div><div class="word-name">Hojas de Otoño</div><p class="word-desc">Facilita soltar apegos a personas, hábitos o situaciones que ya cumplieron su ciclo.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🌸</span><div><div class="word-name">Flores de Primavera</div><p class="word-desc">Borra el miedo al cambio; abre la puerta a nuevas oportunidades con confianza.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">☕</span><div><div class="word-name">Chocolate Caliente</div><p class="word-desc">Limpia memorias de manipulación en las relaciones; restaura la ecuanimidad.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🍊</span><div><div class="word-name">Jugo de Naranja</div><p class="word-desc">Limpia creencias de abuso o carencia alrededor del dinero.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">💙</span><div><div class="word-name">Agua Solarizada Azul</div><p class="word-desc">Cancela memorias dolorosas y programas negativos compartidos con otros.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🥛</span><div><div class="word-name">El Vaso de Agua</div><p class="word-desc">Absorbe la negatividad y el estrés; al vaciarlo, los problemas se van.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">✏️</span><div><div class="word-name">El Borrador</div><p class="word-desc">Borra desde la raíz las memorias y energías de algo que deseas limpiar.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🌹</span><div><div class="word-name">Pétalos de Rosa</div><p class="word-desc">Transmutan el desamor y los resentimientos en amor y compasión.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🌿</span><div><div class="word-name">Verde Esmeralda</div><p class="word-desc">Activa la regeneración celular y el flujo equilibrado de la vida en el cuerpo.</p></div></div>
+      <div class="word-card reveal"><span class="word-emoji">🔵</span><div><div class="word-name">Punto Cero</div><p class="word-desc">Retorno al estado de vacío y apertura total a la inspiración divina.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TRAVELER GUIDE ══════════════ -->
+<section id="guia">
+  <div class="section">
+    <span class="section-label reveal">13 Canciones</span>
+    <h2 class="section-title reveal">Guía del <em>Viajero</em></h2>
+    <p class="section-text reveal">Cada canción es un portal hacia una dimensión específica de tu ser. Haz clic en cada pista para conocer su propósito y cómo usarla en tu práctica.</p>
+
+    <div class="tracklist" id="tracklist">
+
+      <div class="track-item reveal" data-desc="Esta pista es el cimiento de toda tu práctica. Las cuatro frases sagradas —Lo siento, Perdóname, Gracias, Te amo— son pronunciadas aquí como un mantra de apertura. Al asumir la responsabilidad absoluta, no te culpas, sino que te empoderas. Úsala al inicio de cualquier sesión.">
+        <div class="track-num">1</div>
+        <div class="track-info"><div class="track-title">El Mantra del Corazón</div><div class="track-purpose">Base y Limpieza General</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El miedo a la escasez es una de las memorias más profundas del ser humano. Esta pista trabaja sobre los programas de carencia y la ansiedad financiera. La Llovizna cae como un suministro constante de abundancia, mientras el Colibrí eleva tu vibración hacia la prosperidad.">
+        <div class="track-num">2</div>
+        <div class="track-info"><div class="track-title">Lluvia de Provisión</div><div class="track-purpose">Prosperidad y Abundancia</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El cuerpo físico es el templo donde se almacenan las memorias emocionales. El Hielo Azul enfría y alivia la inflamación de las memorias traumáticas, mientras el Verde Esmeralda activa los procesos de regeneración celular. Habla a tu cuerpo con compasión.">
+        <div class="track-num">3</div>
+        <div class="track-info"><div class="track-title">Calma en el Hielo</div><div class="track-purpose">Salud y Alivio del Dolor</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El desapego no es abandono, es liberación con amor. Como los árboles que sueltan sus hojas en otoño para renacer en primavera, esta pista te acompaña en el proceso de soltar lo que ya cumplió su propósito: relaciones, hábitos, versiones de ti mismo.">
+        <div class="track-num">4</div>
+        <div class="track-info"><div class="track-title">Soltando las Hojas</div><div class="track-purpose">Desapego y Transición</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="Cuando la mente racional intenta resolver un problema espiritual, crea más confusión. La Llave de la Luz apaga los programas mentales que nublan tu juicio y te devuelve al Punto Cero, donde la inspiración divina puede finalmente ser escuchada.">
+        <div class="track-num">5</div>
+        <div class="track-info"><div class="track-title">La Luz de la Verdad</div><div class="track-purpose">Claridad y Decisiones</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El amor propio es la raíz de toda sanación. Esta pista es un viaje hacia la recuperación de tu esencia más pura, más allá de los juicios. A través de 'Yo soy el I', reconoces tu identidad como una extensión directa e impecable de lo Divino.">
+        <div class="track-num">6</div>
+        <div class="track-info"><div class="track-title">Paz en el Reflejo</div><div class="track-purpose">Amor Propio y Autoestima</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="Toda relación es un espejo de nuestro mundo interior. El Papel para Moscas atrapa juicios y resentimientos antes de que se conviertan en conflicto, y los Pétalos de Rosa transmutan el desamor en comprensión y amor verdadero.">
+        <div class="track-num">7</div>
+        <div class="track-info"><div class="track-title">Vínculos de Seda</div><div class="track-purpose">Relaciones y Conflictos</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="La sanación generacional es uno de los actos más profundos de amor que podemos realizar. Esta canción corta los lazos kármicos con ancestros que nos transmitieron sus dolores. Al liberarlos, liberas también a quienes vendrán después.">
+        <div class="track-num">8</div>
+        <div class="track-info"><div class="track-title">Memoria Sagrada</div><div class="track-purpose">Sanación Ancestral</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El Ha, el aliento sagrado hawaiano, es la herramienta más simple y poderosa: siempre disponible, siempre presente. Esta meditación rítmica te guía a través de la respiración consciente, oxigenando no solo el cuerpo sino también el espíritu.">
+        <div class="track-num">9</div>
+        <div class="track-info"><div class="track-title">El Aliento de Vida</div><div class="track-purpose">Conexión Espiritual</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="La ira no es tu enemiga. Es una señal sagrada: una memoria que pide ser vista y liberada. Esta pista transforma la rabia en claridad y la frustración en fuerza creativa. El mismo fuego que destruye puede purificar cuando se trabaja con amor y conciencia.">
+        <div class="track-num">10</div>
+        <div class="track-info"><div class="track-title">Fuego que Sana</div><div class="track-purpose">Liberación de la Ira</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="La culpa es el peso más innecesario que cargamos. Esta pista te acompaña en el acto más valiente y amoroso: perdonarte a ti mismo. Las cuatro frases sagradas aquí actúan como el abrazo más profundo que tu Niño Interior ha estado esperando.">
+        <div class="track-num">11</div>
+        <div class="track-info"><div class="track-title">El Abrazo del Perdón</div><div class="track-purpose">Liberación de la Culpa</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El miedo es una ilusión tejida con memorias del pasado. Esta pista trabaja con las raíces más profundas del temor. Más allá del umbral del miedo, te espera una versión más libre, más auténtica y más valiente de ti mismo.">
+        <div class="track-num">12</div>
+        <div class="track-info"><div class="track-title">Más Allá del Umbral</div><div class="track-purpose">Liberación del Miedo</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+      <div class="track-item reveal" data-desc="El viaje concluye donde comenzó: en el centro de tu ser. Ceeport limpia tu subconsciente de forma continua, devolviendo todo a su estado de pureza. El Anillo de Oro sella tu proceso protegiéndote energéticamente. Úsala al final de tus sesiones.">
+        <div class="track-num">13</div>
+        <div class="track-info"><div class="track-title">Retorno al Puerto</div><div class="track-purpose">Cierre y Protección</div></div>
+        <div class="track-yt">▶ YouTube (próximamente)</div>
+        <div class="track-description"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ LETRAS ══════════════ -->
+<section id="letras" class="section-stripe">
+  <div class="section">
+    <span class="section-label reveal">Palabras que Sanan</span>
+    <h2 class="section-title reveal">Letras del <em>Álbum</em></h2>
+    <p class="section-text reveal">Las letras de cada canción están diseñadas para ser meditaciones activas. Puedes cantarlas, recitarlas o simplemente escucharlas mientras permites que las palabras resuenen en tu interior.</p>
+
+    <!-- TABS -->
+    <div class="lyrics-tabs reveal" id="lyricsTabs">
+      <button class="tab-btn active" data-tab="0">1. Mantra</button>
+      <button class="tab-btn" data-tab="1">2. Lluvia</button>
+      <button class="tab-btn" data-tab="2">3. Hielo</button>
+      <button class="tab-btn" data-tab="3">4. Hojas</button>
+      <button class="tab-btn" data-tab="4">5. Luz</button>
+      <button class="tab-btn" data-tab="5">6. Reflejo</button>
+      <button class="tab-btn" data-tab="6">7. Vínculos</button>
+      <button class="tab-btn" data-tab="7">8. Memoria</button>
+      <button class="tab-btn" data-tab="8">9. Aliento</button>
+      <button class="tab-btn" data-tab="9">10. Fuego</button>
+      <button class="tab-btn" data-tab="10">11. Perdón</button>
+      <button class="tab-btn" data-tab="11">12. Umbral</button>
+      <button class="tab-btn" data-tab="12">13. Retorno</button>
+    </div>
+
+    <!-- PANELS -->
+    <div id="lyricPanels">
+
+      <!-- 1 -->
+      <div class="lyric-panel active">
+        <div class="lyric-header">
+          <div class="lyric-num">1</div>
+          <div class="lyric-meta">
+            <div class="lyric-title">El Mantra del Corazón</div>
+            <div class="lyric-purpose">Base y Limpieza General · Establece la conexión con la Divinidad</div>
+          </div>
+          <a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a>
+        </div>
+        <div class="lyric-content">
+<span class="section-tag">Intro</span>
+<span class="bridge">[ Sonido de olas y respiración suave, cuencos tibetanos ]</span>
+
+<span class="section-tag">Verso 1</span>
+Divinidad que habitas en mí, escucha el llamado de mi interior.
+Asumo el cien por ciento de mi realidad,
+Limpiando las memorias que causan dolor.
+No soy víctima, soy el creador,
+Y hoy elijo el camino del amor.
+
+Hay tanto que no entiendo, hay tanto que no sé,
+Pero confío en que la limpieza ya comenzó en mí.
+No necesito ver para creer,
+Solo necesito soltar y permitir que sea.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Lo siento, por las memorias que guardé.
+Perdóname, por el tiempo que no sané.
+Gracias, por la oportunidad de liberar.
+Te amo, porque en el amor vuelvo a mi hogar.</div>
+
+<span class="section-tag">Verso 2</span>
+Pequeño niño que vive en mi ser, Unihipili, lamento haberte hecho temer.
+Hoy te tomo de la mano, vamos a limpiar,
+Toda la carga kármica vamos a soltar.
+Desde el inicio de la creación hasta hoy,
+Pido que se transmute todo lo que soy.
+
+Eres precioso, eres sagrado, eres libre,
+Ya no tienes que cargar lo que otros vivieron.
+Cada memoria que hoy soltamos juntos
+Es un paso más hacia nuestro amor verdadero.
+
+<span class="section-tag">Puente</span>
+<div class="bridge">Limpiando, borrando, volviendo a Cero.
+Limpiando, borrando, luz es lo que quiero.
+Que la energía tóxica sea luz divina,
+En esta paz sagrada que me ilumina.
+
+Cero memorias, cero programas, solo el ahora.
+Cero límites, cero miedo, solo la aurora.</div>
+
+<span class="section-tag">Outro</span>
+La paz del "I" está conmigo.
+Está hecho, y hecho está.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box">
+          <div class="suno-title">🎛️ Prompt para Suno AI</div>
+          <div class="suno-prompt">slow ambient meditation music, tibetan singing bowls, ocean waves, soft piano, gentle flute, warm female vocals, hawaiian spiritual chant style, 60 BPM, peaceful, healing, drone bass, reverb</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="lyric-panel">
+        <div class="lyric-header">
+          <div class="lyric-num">2</div>
+          <div class="lyric-meta">
+            <div class="lyric-title">Lluvia de Provisión</div>
+            <div class="lyric-purpose">Prosperidad y Abundancia · Limpia memorias de carencia</div>
+          </div>
+          <a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a>
+        </div>
+        <div class="lyric-content">
+<span class="section-tag">Intro</span>
+<span class="bridge">[ Lluvia suave, tintineos cristalinos, arpa ]</span>
+
+<span class="section-tag">Verso 1</span>
+Divinidad, limpia en mí lo que contribuye a la escasez.
+Borro los programas de miedo, borro la rigidez.
+Abro las puertas a la riqueza que es natural.
+Suelto la angustia, abrazo mi estado ancestral.
+
+Viene de mis padres, viene de sus padres también,
+El miedo de que nunca será suficiente el bien.
+Hoy lo siento, hoy lo limpio, hoy lo suelto al fin,
+La abundancia siempre estuvo esperando aquí en mí.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Llovizna, cae sobre mi economía.
+Llovizna, borra la vieja agonía.
+Colibrí, vuela alto en mi prosperidad.
+Colibrí, cancelas la ansiedad por la realidad.</div>
+
+<span class="section-tag">Verso 2</span>
+Pongo mi dinero en un vaso de luz y gratitud.
+Jugo de Naranja para limpiar mi actitud.
+Lo siento por haber creído que no merezco más,
+Gracias por ser la herramienta de mi libertad.
+
+No es que el dinero sea malo o que me haga daño,
+Es que mis memorias le pusieron un extraño.
+Hoy limpio esa historia, hoy abrazo la abundancia,
+Y dejo que la Divinidad lleve la danza.
+
+<span class="section-tag">Puente</span>
+<div class="bridge">El universo es próspero, el universo es generoso,
+Todo lo que necesito llega a mí amoroso.
+No tengo que luchar, no tengo que temer,
+La provisión divina siempre llegará a su tiempo.</div>
+
+<span class="section-tag">Outro</span>
+Llovizna, llovizna, Colibrí.
+Fluyo con la abundancia de la Divinidad.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box">
+          <div class="suno-title">🎛️ Prompt para Suno AI</div>
+          <div class="suno-prompt">ambient new age music, crystal bowls, harp, rain sounds, soft meditative vocals, abundance and prosperity theme, gentle and uplifting, warm tones, 60 BPM, healing frequency</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="lyric-panel">
+        <div class="lyric-header">
+          <div class="lyric-num">3</div>
+          <div class="lyric-meta">
+            <div class="lyric-title">Calma en el Hielo</div>
+            <div class="lyric-purpose">Salud y Alivio del Dolor · Memorias traumáticas y regeneración</div>
+          </div>
+          <a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a>
+        </div>
+        <div class="lyric-content">
+<span class="section-tag">Intro</span>
+<span class="bridge">[ Sonido ambiental gélido, cuencos de cuarzo, campanas de cristal ]</span>
+
+<span class="section-tag">Verso 1</span>
+A mi cuerpo físico le hablo hoy con compasión.
+Eres el templo que guarda cada vieja emoción.
+Si hay quemaduras, heridas o un hondo pesar,
+Llamo a la calma para que comiences a sanar.
+
+Cuánto has cargado sin que te lo pidiera,
+Cuántas memorias convertiste en enfermedad severa.
+Hoy te pido perdón, cuerpo mío sagrado,
+Por cada vez que tu señal no había escuchado.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Hielo Azul, enfría la memoria del dolor.
+Hielo Azul, envuelve mi herida en amor.
+Verde Esmeralda, fluye por mi circulación.
+Verde Esmeralda, regenera cada pulsación.</div>
+
+<span class="section-tag">Verso 2</span>
+Divinidad, transmuta el error en pura luz.
+Suelto la carga que llevo, suelto mi cruz.
+Mi Niño Interior descansa en el frío sanador.
+Borro la causa, borro el antiguo temor.
+
+No hay enfermedad que la memoria no haya creado,
+No hay dolor que el amor no pueda haber curado.
+Pido que se limpie desde el inicio del tiempo,
+Todo lo que en mi cuerpo causó sufrimiento.
+
+<span class="section-tag">Outro</span>
+Hielo Azul, Hielo Azul, Hielo Azul, Verde Esmeralda, Verde Esmeralda.
+Paz, más allá de todo entendimiento.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box">
+          <div class="suno-title">🎛️ Prompt para Suno AI</div>
+          <div class="suno-prompt">healing meditation music, crystal singing bowls, icy ambient synths, wind chimes, very slow 50 BPM, pain relief meditation, blue light visualization, theta wave binaural undertones, peaceful and cold atmosphere</div>
+        </div>
+      </div>
+
+      <!-- 4-10 condensed panels -->
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">4</div><div class="lyric-meta"><div class="lyric-title">Soltando las Hojas</div><div class="lyric-purpose">Desapego y Transición · Soltar lo que ya cumplió su ciclo</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Hay estaciones en el alma que deben pasar.
+Aferrarse al ayer solo impide el caminar.
+Reconozco el aprendizaje de lo que se va.
+Lo que es perfecto y correcto, ante mí llegará.
+
+Hay personas que amé y que ya se marcharon,
+Hay versiones de mí que hace tiempo dejaron.
+No es pérdida, es transformación sagrada,
+Es la poda amorosa del alma en su jornada.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Hojas de Otoño, suelto el apego y la unión.
+Hojas de Otoño, entrego esta vieja versión.
+Flores de Primavera, renazco en la oportunidad.
+Flores de Primavera, borro la inseguridad.</div>
+
+<span class="section-tag">Verso 2</span>
+Tiro del Tapón y dejo que el bloqueo se vaya.
+Limpio la mente, borro cualquier vieja falla.
+Gracias por la lección, gracias por el ayer.
+Hoy elijo ser libre y volver a nacer.
+
+<span class="section-tag">Outro</span>
+Suelto y confío. Hojas de Otoño, Flores de Primavera.
+Hágase tu voluntad.
+Gracias, gracias, gracias. Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">folk ambient meditation, soft violin, acoustic guitar, autumn wind sounds, gentle piano, letting go theme, emotional but hopeful, 60 BPM, soft female vocals</div></div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">5</div><div class="lyric-meta"><div class="lyric-title">La Luz de la Verdad</div><div class="lyric-purpose">Claridad y Decisiones · Conectar con la inspiración divina</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Cuando la mente se pierde en la discusión,
+Y la pasión pelea contra la razón.
+Divinidad, ilumina esta situación,
+Borra el programa, dame tu visión.
+
+He intentado resolverlo con mi mente tantas veces,
+Y el resultado siempre fue más nudo entre mis redes.
+Hoy me rindo, no como derrota sino como confianza,
+Sé que la respuesta que necesito en ti descansa.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Llave de la Luz, borro la oscuridad.
+Llave de la Luz, para hallar la verdad.
+Punto Cero, me rindo a la inspiración.
+Punto Cero, vacío en mi corazón.</div>
+
+<span class="section-tag">Outro</span>
+Llave de la Luz, Llave de la Luz, Llave de la Luz.
+Cerrando programas, abriendo el canal.
+Gracias, gracias, gracias. Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">ethereal ambient electronic meditation, ascending synths, bell pads, light airy atmosphere, space music, clarity and truth theme, 60 BPM, soft reverb vocals, divine inspiration</div></div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">6</div><div class="lyric-meta"><div class="lyric-title">Paz en el Reflejo</div><div class="lyric-purpose">Amor Propio y Autoestima · Conexión con la identidad divina</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Me miro de frente, sin juicio ni error,
+Buscando en mis ojos mi esencia mejor.
+Limpio la crítica, el falso disfraz,
+Para encontrar en mi alma la paz.
+
+¿Cuántos años me miré sin verme realmente?
+¿Cuántas veces alejé mi propia mirada de enfrente?
+Hoy soy valiente: me miro y me digo
+Que soy merecedor de todo lo que pido.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Yo soy, de la nada hacia la luz.
+Yo soy, suelto mi propia cruz.
+Espejo, me veo como Dios me ve.
+Espejo, amándome otra vez.</div>
+
+<span class="section-tag">Outro</span>
+Yo soy. Espejo de amor. Gracias por existir.
+Gracias, gracias, gracias. Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">self-love meditation music, crystal piano, water sounds, soft violin, gentle choir, self-acceptance theme, 55 BPM, warm and nurturing, divine identity, Hawaiian spiritual influence</div></div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">7</div><div class="lyric-meta"><div class="lyric-title">Vínculos de Seda</div><div class="lyric-purpose">Relaciones y Conflictos · Transmutar juicios y resentimientos</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Si lo que veo en ti me causa dolor,
+Es una memoria pidiendo mi amor.
+Lo que me molesta, lo limpio en mi ser,
+Pues no hay un "afuera", hay que comprender.
+
+Tú eres mi maestro aunque no lo sepas,
+Cada vez que me irritas, algo en mí despejas.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Papel para Moscas, atrapo la ira.
+Papel para Moscas, el juicio se retira.
+Pétalos de Rosa, abriendo el corazón.
+Pétalos de Rosa, transmutando la unión.</div>
+
+<span class="section-tag">Outro</span>
+Limpio en mí lo que comparto contigo.
+Papel para Moscas... Pétalos de Rosa...
+Lo siento, perdóname, gracias, te amo. (×3)
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">romantic ambient meditation, soft strings violin, harp, piano, relationship healing theme, forgiveness and love, 60 BPM, warm female vocals, gentle and compassionate</div></div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">8</div><div class="lyric-meta"><div class="lyric-title">Memoria Sagrada</div><div class="lyric-purpose">Sanación Ancestral · Liberación de lazos kármicos familiares</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Creador Divino, Padre, Madre, Hijo, todos unidos como uno.
+Si yo, mi familia, parientes o antepasados te ofendimos en el tiempo inoportuno.
+Desde el inicio de la creación hasta el presente, en pensamientos o acción.
+Humildemente pido perdón para toda mi generación.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Divinidad limpia en mí, el origen del problema.
+Divinidad limpia en mí, rompiendo el viejo esquema.
+Corta, libera, purifica y transmuta en luz divina.
+Toda energía tóxica que en mi ADN camina.</div>
+
+<span class="section-tag">Outro</span>
+¡Estamos libres! Divinidad limpia en mí.
+Hecho está, y hecho ya se encuentra.
+Gracias, gracias, gracias. Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">ancestral healing meditation, shamanic drums, heartbeat rhythm, deep tibetan bowls, ancestral chant, DNA healing theme, 55 BPM, deep male vocals, primal and sacred</div></div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">9</div><div class="lyric-meta"><div class="lyric-title">El Aliento de Vida</div><div class="lyric-purpose">Conexión Espiritual · Vitalidad y eliminación de la agitación mental</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Siento el aliento de la vida en mi interior.
+Inspirando energía divina, expulsando todo temor.
+Sin el aliento de la vida no hay conexión, sin el aire no hay verdad.
+Siete tiempos para el alma, siete para la paz y la unidad.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">El aliento de la vida, oxigena mi conciencia.
+Aliento de la vida, detén la turbulencia.
+El aliento de la vida, saludo al espíritu en ti,
+El aliento de la vida, saludo al espíritu en mí.</div>
+
+<span class="section-tag">Guía de respiración</span>
+<div class="bridge">[ Inhala 7 tiempos → Retén 7 → Exhala 7 → Vacío 7 ]
+Repite con consciencia plena...</div>
+
+<span class="section-tag">Outro</span>
+Con el aliento de la vida, viviendo en armonía,
+Dando y recibiendo luz.
+Gracias, gracias, gracias. Te amo, te amo, te amo.
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">Hawaiian breathwork meditation, wind sounds, rhythmic breathing guide, ukulele, soft flute, Aloha spiritual theme, 50 BPM, very peaceful, prana energy, mana life force</div></div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header">
+          <div class="lyric-num">10</div>
+          <div class="lyric-meta">
+            <div class="lyric-title">Fuego que Sana</div>
+            <div class="lyric-purpose">Liberación de la Ira · Transformar la rabia en claridad</div>
+          </div>
+          <a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a>
+        </div>
+        <div class="lyric-content">
+<span class="section-tag">Intro</span>
+<span class="bridge">[ Fuego crepitante, tambores que se suavizan, cuencos de metal ]</span>
+
+<span class="section-tag">Verso 1</span>
+Hay un fuego en mi pecho que pide ser visto.
+No es mi enemigo, es mi mensajero listo.
+Ira sagrada, señal de mis memorias,
+Te recibo sin pelea, sin culpas, sin escoria.
+
+No te reprimo, no te juzgo, no me avergüenzo de ti,
+Sé que guardas el dolor de lo que una vez viví.
+Siento la llama, la reconozco con honor,
+Y te entrego a la Divinidad para que te transforme en amor.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Lo siento por las memorias que encendieron este fuego.
+Perdóname por haber guardado tanto tiempo el juego.
+Gracias por mostrarme lo que necesita sanar.
+Te amo, fuego, mientras te veo transformar.</div>
+
+<span class="section-tag">Verso 2</span>
+Papel para Moscas, atrapo esta ira ahora mismo.
+La capturo antes de que cruce el precipicio.
+Hielo Azul, baja la temperatura emocional,
+Enfría la memoria que alimentó este vendaval.
+
+No hay persona que me haya hecho daño sin mi co-creación,
+No hay enojo que no tenga su raíz en mi interior.
+
+<span class="section-tag">Puente</span>
+<div class="bridge">Siento el fuego... lo honro... lo nombro...
+"Ira, te escucho, te veo, te agradezco tu aviso."
+Papel para Moscas te atrapa suavemente...
+Hielo Azul te enfría gentilmente...
+Las 4 frases te transmutan eternamente...
+
+El mismo fuego que destruye puede purificar,
+La misma energía que arde puede iluminar.</div>
+
+<span class="section-tag">Verso 3</span>
+Rodillo de Masa aplana el conflicto y el drama,
+Suelto el rencor que anidó en mi alma.
+Gracias por la lección que me dejó este enojo,
+Por mostrarme el camino de regreso a mi alojo.
+
+El perdón no es debilidad, es la mayor fortaleza,
+Liberar la ira es recuperar mi propia entereza.
+
+<span class="section-tag">Outro</span>
+El fuego que me quemaba ahora me ilumina.
+Papel para Moscas, Hielo Azul, limpieza que me afina.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+[ El fuego crepitante se convierte en una brasa suave y cálida... ]
+        </div>
+        <div class="suno-box">
+          <div class="suno-title">🎛️ Prompt para Suno AI</div>
+          <div class="suno-prompt">anger transformation meditation, crackling fire sounds, shamanic drums slowing down, metal bowls, dynamic from intense to peaceful, 70 to 50 BPM transition, emotional release, fire to light transformation</div>
+        </div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header">
+          <div class="lyric-num">11</div>
+          <div class="lyric-meta">
+            <div class="lyric-title">El Abrazo del Perdón</div>
+            <div class="lyric-purpose">Liberación de la Culpa · Perdonarse a uno mismo</div>
+          </div>
+          <a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a>
+        </div>
+        <div class="lyric-content">
+<span class="section-tag">Intro</span>
+<span class="bridge">[ Piano muy suave, lluvia leve, ambiente íntimo y cálido ]</span>
+
+<span class="section-tag">Verso 1</span>
+Cargué tanto tiempo el peso de mis errores,
+Pensé que merecía vivir entre dolores.
+Pero hoy me doy cuenta de que la culpa no es la respuesta,
+Es otra memoria que pide ser dispuesta.
+
+No hubo maldad en lo que hice, hubo confusión,
+Memorias actuando sin mi plena comprensión.
+Hoy me veo con los ojos de quien me ama de verdad,
+Y me digo: "mereces paz, mereces libertad."
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Lo siento por haberme juzgado tanto tiempo.
+Perdóname, Niño Interior, por no darte aliento.
+Gracias por seguir aquí, esperando mi amor.
+Te amo, me abrazo hoy sin condición, sin temor.</div>
+
+<span class="section-tag">Verso 2</span>
+Gota de Rocío, transforma el viejo dolor,
+Lo que fue oscuro conviértelo en fulgor.
+Chocolate Caliente, borra la culpa de haber fallado,
+Restaura mi ecuanimidad en este instante sagrado.
+
+He pedido perdón a otros, pero olvidé pedírmelo a mí,
+He sanado muchas heridas sin ver las mías aquí.
+Hoy rompo ese patrón, hoy me doy lo que negué,
+El abrazo más largo y más profundo que jamás me di.
+
+<span class="section-tag">Puente</span>
+<div class="bridge">Cierra los ojos...
+Imagina a tu Niño Interior frente a ti...
+Asustado, esperando que lo veas...
+Que lo abraces...
+Que le digas: "Lo siento... Perdóname... Gracias... Te amo..."
+
+El vaso de agua absorbe la culpa acumulada,
+Al vaciarlo por el desagüe, se va toda la cargada.</div>
+
+<span class="section-tag">Verso 3</span>
+Errar es parte del camino de crecer y de aprender,
+No hay ser humano que no haya tenido que caer.
+Lo que importa no es el error sino lo que hago ahora,
+Y lo que hago ahora es amarme en esta aurora.
+
+<span class="section-tag">Outro</span>
+Me abrazo. Me perdono. Me amo.
+Gota de Rocío, Chocolate Caliente, limpio el reclamo.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+[ Piano se desvanece suavemente... ]
+        </div>
+        <div class="suno-box">
+          <div class="suno-title">🎛️ Prompt para Suno AI</div>
+          <div class="suno-prompt">self-forgiveness meditation music, intimate solo piano, light rain, soft strings, warm close vocals, guilt release theme, 50 BPM, emotional healing, inner child meditation, compassionate and gentle, self-love</div>
+        </div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header">
+          <div class="lyric-num">12</div>
+          <div class="lyric-meta">
+            <div class="lyric-title">Más Allá del Umbral</div>
+            <div class="lyric-purpose">Liberación del Miedo · Cruzar el umbral hacia la libertad</div>
+          </div>
+          <a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a>
+        </div>
+        <div class="lyric-content">
+<span class="section-tag">Intro</span>
+<span class="bridge">[ Viento suave, campanas lejanas, silencio profundo ]</span>
+
+<span class="section-tag">Verso 1</span>
+Hay un umbral en mi vida que he temido cruzar,
+Una puerta que el miedo siempre supo vigilar.
+Pero hoy reconozco que ese miedo es una historia,
+Una memoria antigua disfrazada de victoria.
+
+El miedo no es la verdad, es solo una ilusión,
+Un programa del pasado proyectado en mi visión.
+Hoy lo veo con claridad, lo nombro con amor,
+Y elijo cruzar el umbral hacia mi mayor honor.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Lo siento por creer que el miedo era más grande que yo.
+Perdóname por todas las veces que no avancé y no sé.
+Gracias por protegerme cuando era lo que necesitaba.
+Te amo, miedo, y ahora te suelto, ya cumpliste tu tarea.</div>
+
+<span class="section-tag">Verso 2</span>
+Flores de Primavera, limpia el miedo al cambio que me frena,
+Borra la inseguridad que me encadena.
+Llave de la Luz, apaga los programas del temor,
+Trae claridad donde había confusión y ardor.
+
+No hay futuro que deba temerle si confío en lo Divino,
+No hay camino oscuro cuando tengo un guía en mi destino.
+
+<span class="section-tag">Puente</span>
+<div class="bridge">Imagina que estás frente a una puerta...
+El miedo te dice: "No puedes, no eres suficiente..."
+La Divinidad te dice: "Ya eres todo lo que necesitas..."
+¿Cuál voz eliges escuchar?
+
+Punto Cero, el espacio antes de cruzar,
+Donde no hay miedo porque no hay nada que perder.
+Solo hay la apertura total al presente,
+Solo hay el amor de la Divinidad presente.</div>
+
+<span class="section-tag">Verso 3</span>
+Hielo Azul, enfría la fiebre del pánico que aprieta,
+Punto Cero, vacía la mente que interpreta.
+Soy más que mis miedos, soy más que mis límites,
+Soy el amor que cruza todos los confines.
+
+<span class="section-tag">Outro</span>
+[ La música se abre, se expande, como si el sol saliera ]
+Más allá del umbral... hay libertad...
+Flores de Primavera, Llave de la Luz, Punto Cero.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+[ El viento se convierte en brisa cálida... Silencio y paz ]
+        </div>
+        <div class="suno-box">
+          <div class="suno-title">🎛️ Prompt para Suno AI</div>
+          <div class="suno-prompt">fear release transformation meditation, wind sounds, distant bells, expanding orchestral strings, crescendo emotional moment, 50 BPM building to hopeful resolution, crossing threshold theme, empowerment and freedom</div>
+        </div>
+      </div>
+
+      <div class="lyric-panel">
+        <div class="lyric-header"><div class="lyric-num">13</div><div class="lyric-meta"><div class="lyric-title">Retorno al Puerto</div><div class="lyric-purpose">Cierre y Protección · Sellado de la paz interna</div></div><a href="#" class="lyric-yt-link">▶ Escuchar (próximamente)</a></div>
+        <div class="lyric-content">
+<span class="section-tag">Verso 1</span>
+Vuelvo al puerto, al origen, al estado de inocencia.
+Donde no hay memorias, solo mi divina esencia.
+Me coloco en el Pillar de Paz del Ser, radiante y protegido.
+De toda vibración negativa, hoy me encuentro bendecido.
+
+<span class="section-tag">Coro</span>
+<div class="chorus">Limpiar, borrar, eliminar, limpio y borro hasta volver al hogar.
+Limpiar, borrar, eliminar, veinticuatro horas sin dejar de limpiar.
+La Paz del Ser, mi paz eterna para siempre.
+Desde ahora, por toda la eternidad, presente.</div>
+
+<span class="section-tag">Outro</span>
+La Paz del Ser. Cero memorias, pura inspiración.
+Gracias, gracias, gracias.
+Te amo, te amo, te amo.
+[ Las campanas se van apagando suavemente... ]
+        </div>
+        <div class="suno-box"><div class="suno-title">🎛️ Prompt para Suno AI</div><div class="suno-prompt">closing meditation music, tibetan bells, calm ocean, very slow ambient 50 BPM, sacred ending ceremony, protection and sealing theme, decreasing tempo, peaceful resolution</div></div>
+      </div>
+
+    </div><!-- /lyricPanels -->
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-logo">El Estado del Ser</div>
+  <div class="footer-phrases">
+    <span>Lo siento</span>
+    <span>·</span>
+    <span>Perdóname</span>
+    <span>·</span>
+    <span>Gracias</span>
+    <span>·</span>
+    <span>Te amo</span>
+  </div>
+  <p>Un álbum de meditación y sanación basado en las enseñanzas del Ho'oponopono.</p>
+  <p style="margin-top:1.5rem; opacity:0.4; font-size:0.72rem">© 2025 El Estado del Ser · Producción musical próximamente en todas las plataformas</p>
+</footer>
+
+<!-- ══════════════ JAVASCRIPT ══════════════ -->
+<script>
+  // ── Hamburger menu ──
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // ── Scroll reveal ──
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // ── Navbar shadow on scroll ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 20 ? '0 4px 32px rgba(38,59,106,0.12)' : '0 2px 20px rgba(38,59,106,0.07)';
+  });
+
+  // ── Track item toggle (guide descriptions) ──
+  document.querySelectorAll('.track-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const desc = item.querySelector('.track-description');
+      const text = item.dataset.desc || '';
+      if (desc.textContent !== text) desc.textContent = text;
+
+      if (item.classList.contains('expanded')) {
+        item.classList.remove('expanded');
+      } else {
+        document.querySelectorAll('.track-item.expanded').forEach(i => i.classList.remove('expanded'));
+        item.classList.add('expanded');
+      }
+    });
+  });
+
+  // ── Lyrics tabs ──
+  const tabBtns  = document.querySelectorAll('.tab-btn');
+  const panels   = document.querySelectorAll('.lyric-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.tab);
+      tabBtns.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      panels[idx].classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

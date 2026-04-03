@@ -1,0 +1,47 @@
+<svg width="1200" height="800" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+<rect width="680" height="460" fill="#F5EDD5"/>
+<ellipse cx="340" cy="310" rx="260" ry="195" fill="none" stroke="#E8D5B0" stroke-width="1.2"/>
+<ellipse cx="340" cy="310" rx="220" ry="165" fill="none" stroke="#E2CAA0" stroke-width="1"/>
+<ellipse cx="340" cy="310" rx="180" ry="135" fill="none" stroke="#DCC090" stroke-width="0.8"/>
+<ellipse cx="340" cy="310" rx="145" ry="108" fill="none" stroke="#D6B880" stroke-width="0.7"/>
+<ellipse cx="340" cy="310" rx="112" ry="84" fill="none" stroke="#D0B070" stroke-width="0.6"/>
+<ellipse cx="340" cy="310" rx="82" ry="62" fill="none" stroke="#CAA860" stroke-width="0.5"/>
+<ellipse cx="340" cy="310" rx="56" ry="42" fill="none" stroke="#C4A050" stroke-width="0.4"/>
+<circle cx="340" cy="310" r="100" fill="#F8F0E0"/>
+<circle cx="340" cy="310" r="78" fill="#F4EAD5"/>
+<circle cx="340" cy="310" r="58" fill="#F0E4C8"/>
+<ellipse cx="340" cy="248" rx="22" ry="22" fill="#263B6A"/>
+<path d="M318 268 Q295 290 292 340 Q316 325 340 322 Q364 325 388 340 Q385 290 362 268 Z" fill="#263B6A"/>
+<path d="M292 340 Q286 365 285 390 Q312 382 340 380 Q368 382 395 390 Q394 365 388 340 Z" fill="#263B6A"/>
+<ellipse cx="325" cy="272" rx="13" ry="13" fill="#6984A9"/>
+<path d="M312 283 Q300 298 298 330 Q314 320 325 318 Q336 320 350 330 Q350 298 338 283 Z" fill="#6984A9"/>
+<path d="M298 330 Q294 350 293 370 Q308 364 325 362 Q342 364 357 370 Q356 350 352 330 Z" fill="#6984A9"/>
+<path d="M318 275 Q298 285 292 308" stroke="#263B6A" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M362 275 Q380 285 384 304" stroke="#263B6A" stroke-width="9" fill="none" stroke-linecap="round"/>
+<circle cx="300" cy="310" r="7" fill="#263B6A"/>
+<circle cx="378" cy="306" r="7" fill="#263B6A"/>
+<ellipse cx="316" cy="262" rx="3" ry="5" fill="#6984A9" opacity="0.6"/>
+<ellipse cx="313" cy="250" rx="2.5" ry="4" fill="#6984A9" opacity="0.45"/>
+<circle cx="316" cy="232" r="3.5" fill="#C8A84B" opacity="0.7"/>
+<circle cx="314" cy="220" r="3" fill="#C8A84B" opacity="0.55"/>
+<circle cx="317" cy="208" r="2.5" fill="#EEFABD" opacity="0.7"/>
+<circle cx="315" cy="197" r="2" fill="#EEFABD" opacity="0.55"/>
+<circle cx="318" cy="187" r="1.5" fill="#FFFFFF" opacity="0.75"/>
+<ellipse cx="364" cy="258" rx="3" ry="5" fill="#6984A9" opacity="0.5"/>
+<circle cx="364" cy="234" r="3.5" fill="#C8A84B" opacity="0.65"/>
+<circle cx="366" cy="222" r="3" fill="#C8A84B" opacity="0.5"/>
+<circle cx="364" cy="211" r="2" fill="#EEFABD" opacity="0.6"/>
+<ellipse cx="258" cy="265" rx="6" ry="10" fill="#D4857A" opacity="0.35" transform="rotate(-25 258 265)"/>
+<ellipse cx="240" cy="282" rx="5" ry="9" fill="#C8A84B" opacity="0.28" transform="rotate(-40 240 282)"/>
+<ellipse cx="272" cy="248" rx="5" ry="8" fill="#A0D585" opacity="0.32" transform="rotate(-15 272 248)"/>
+<ellipse cx="418" cy="258" rx="6" ry="10" fill="#D4857A" opacity="0.35" transform="rotate(25 418 258)"/>
+<ellipse cx="436" cy="275" rx="5" ry="9" fill="#C8A84B" opacity="0.28" transform="rotate(40 436 275)"/>
+<ellipse cx="404" cy="244" rx="5" ry="8" fill="#A0D585" opacity="0.32" transform="rotate(15 404 244)"/>
+<path d="M338 174 Q340 171 342 174 Q344 171 346 174 Q346 178 340 182 Q334 178 334 174 Q336 171 338 174 Z" fill="#D4857A" opacity="0.5"/>
+<path d="M305 185 Q306.5 183 308 185 Q309.5 183 311 185 Q311 188 308 191 Q305 188 305 185 Z" fill="#C8A84B" opacity="0.45"/>
+<path d="M369 180 Q370.5 178 372 180 Q373.5 178 375 180 Q375 183 372 186 Q369 183 369 180 Z" fill="#D4857A" opacity="0.45"/>
+<rect x="0" y="412" width="680" height="48" fill="#F0E4C8" opacity="0.9"/>
+<line x1="0" y1="412" x2="680" y2="412" stroke="#D6B880" stroke-width="0.8"/>
+<text x="340" y="432" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#6984A9">11</text>
+<text x="340" y="452" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#263B6A" font-style="italic">El Abrazo del Perdón</text>
+</svg>

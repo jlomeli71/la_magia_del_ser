@@ -1,0 +1,52 @@
+<svg width="1200" height="800" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+<rect width="340" height="460" fill="#12213A"/>
+<rect x="340" width="340" height="460" fill="#F5EDD5"/>
+<circle cx="80" cy="55" r="1.5" fill="#6984A9" opacity="0.7"/>
+<circle cx="145" cy="38" r="1" fill="#A0D585" opacity="0.5"/>
+<circle cx="55" cy="90" r="1" fill="#EEFABD" opacity="0.5"/>
+<circle cx="200" cy="62" r="1.5" fill="#EEFABD" opacity="0.6"/>
+<circle cx="240" cy="30" r="1" fill="#6984A9" opacity="0.6"/>
+<circle cx="165" cy="95" r="1" fill="#EEFABD" opacity="0.4"/>
+<circle cx="95" cy="130" r="1.2" fill="#A0D585" opacity="0.4"/>
+<circle cx="280" cy="75" r="1" fill="#EEFABD" opacity="0.5"/>
+<circle cx="38" cy="145" r="1" fill="#6984A9" opacity="0.5"/>
+<circle cx="195" cy="150" r="1.2" fill="#A0D585" opacity="0.4"/>
+<circle cx="75" cy="250" r="1.2" fill="#A0D585" opacity="0.35"/>
+<path d="M340 230 L620 60 L620 40 L340 230 Z" fill="#F4B040" opacity="0.08"/>
+<path d="M340 230 L620 120 L620 60 L340 230 Z" fill="#F4B040" opacity="0.1"/>
+<path d="M340 230 L620 230 L620 200 L340 230 Z" fill="#F4B040" opacity="0.12"/>
+<path d="M340 230 L620 340 L620 310 L340 230 Z" fill="#F4B040" opacity="0.1"/>
+<rect x="340" y="0" width="340" height="460" fill="#FBF5E6" opacity="0.3"/>
+<ellipse cx="500" cy="230" rx="180" ry="160" fill="#F8F0DC" opacity="0.4"/>
+<ellipse cx="460" cy="230" rx="130" ry="120" fill="#F4E8C8" opacity="0.35"/>
+<rect x="230" y="0" width="115" height="460" fill="#1C2A45" opacity="0.6"/>
+<rect x="270" y="0" width="72" height="460" fill="#1C2A45" opacity="0.5"/>
+<rect x="300" y="0" width="42" height="460" fill="#12213A" opacity="0.6"/>
+<path d="M286 400 L286 215 Q286 158 340 158 Q394 158 394 215 L394 400 Z" fill="#0A1520"/>
+<path d="M296 400 L296 218 Q296 170 340 170 Q384 170 384 218 L384 400 Z" fill="#1C2A45"/>
+<path d="M304 400 L304 220 Q304 178 340 178 Q376 178 376 220 L376 400 Z" fill="#F4B040" opacity="0.9"/>
+<path d="M308 400 L308 222 Q308 182 340 182 Q372 182 372 222 L372 400 Z" fill="#F8C850" opacity="0.85"/>
+<path d="M314 400 L314 225 Q314 185 340 185 Q366 185 366 225 L366 400 Z" fill="#FADA80" opacity="0.7"/>
+<path d="M320 400 L320 230 Q320 192 340 192 Q360 192 360 230 L360 400 Z" fill="#FCE9A0" opacity="0.6"/>
+<path d="M286 400 L286 215 Q286 158 340 158 Q394 158 394 215 L394 400" stroke="#0A1520" stroke-width="2" fill="none"/>
+<path d="M296 400 L296 218 Q296 170 340 170 Q384 170 384 218 L384 400" stroke="#263B6A" stroke-width="1" fill="none"/>
+<rect x="286" y="396" width="108" height="6" fill="#0A1520"/>
+<path d="M336 330 L328 400 L338 400 L340 355 Z" fill="#0A1520"/>
+<path d="M326 265 Q320 295 322 330 Q328 345 340 348 Q352 345 358 330 Q360 295 354 265 Z" fill="#0A1520"/>
+<ellipse cx="340" cy="255" rx="14" ry="15" fill="#0A1520"/>
+<path d="M344 330 L355 395 L345 400 L340 355 Z" fill="#263B6A" opacity="0.8"/>
+<path d="M354 278 Q372 268 388 272" stroke="#1C2A45" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="388" cy="272" r="5" fill="#1C2A45"/>
+<path d="M326 278 Q312 285 306 292" stroke="#0A1520" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="305" cy="293" r="5" fill="#0A1520"/>
+<ellipse cx="340" cy="400" rx="52" ry="8" fill="#0A1520" opacity="0.5"/>
+<path d="M470 120 Q474 116 478 120 Q482 116 486 120" stroke="#C8A84B" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M520 90 Q524 86 528 90 Q532 86 536 90" stroke="#C8A84B" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<path d="M490 148 Q493 145 496 148 Q499 145 502 148" stroke="#C8A84B" stroke-width="1" fill="none" stroke-linecap="round"/>
+<path d="M600 75 Q603 72 606 75 Q609 72 612 75" stroke="#A0D585" stroke-width="1" fill="none" stroke-linecap="round"/>
+<rect x="0" y="412" width="340" height="48" fill="#0F1A2E"/>
+<rect x="340" y="412" width="340" height="48" fill="#F0E4C8"/>
+<line x1="0" y1="412" x2="680" y2="412" stroke="#263B6A" stroke-width="0.8"/>
+<text x="340" y="432" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#6984A9">12</text>
+<text x="340" y="452" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#1C2A45" font-style="italic">Más Allá del Umbral</text>
+</svg>
