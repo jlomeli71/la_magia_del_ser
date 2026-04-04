@@ -55,10 +55,20 @@ la_magia_del_ser/
 ├── README.md           ← Documento principal del proyecto
 ├── index.html          ← Página web
 └── images/
-    ├── README.md       ← Descripción de imágenes
-    ├── cancion_11_ira.txt          ← Prompt para imagen (Suno/Midjourney)
-    ├── cancion_12_culpa.txt        ← Prompt para imagen
-    └── cancion_13_miedo.txt        ← Prompt para imagen
+    ├── README.md               ← Descripción e instrucciones de imágenes
+    ├── cancion_01_mantra.jpg
+    ├── cancion_02_lluvia.jpg
+    ├── cancion_03_hielo.jpg
+    ├── cancion_04_hojas.jpg
+    ├── cancion_05_luz.jpg
+    ├── cancion_06_paz.jpg
+    ├── cancion_07_vinculos.jpg
+    ├── cancion_08_memoria.jpg
+    ├── cancion_09_aliento.jpg
+    ├── cancion_10_ira.jpg
+    ├── cancion_11_culpa.jpg
+    ├── cancion_12_miedo.jpg
+    └── cancion_13_retorno.jpg
 ```
 
 ## Tecnologías Usadas
@@ -77,12 +87,71 @@ la_magia_del_ser/
 
 ## Notas
 
-- Las instrucciones de Suno AI están incluidas en cada sección de canción en el README.md
-- Los links de YouTube son temporales y están desactivados hasta tener la playlist real
+- Las instrucciones de Suno AI están incluidas en cada sección de canción en el README.md (en la web solo se eliminan conforme se publican los videos reales)
+- Los links de YouTube se activan progresivamente conforme se suben los videos
 - Las imágenes decorativas del .docx original no se incluyeron en el markdown (solo descripciones de prompt)
+- Canción 1 ya tiene link real de YouTube: https://youtu.be/mQp1anXzGnA
 
-## Instrucciones para Claude
+---
 
-Se actualizo el link para la canción 1, elimina las instrucciones de Suno para esta cancion en la pagina web.
-https://youtu.be/mQp1anXzGnA
+## Tareas Siguientes
 
+### 7. Publicación del Sitio Web (Despliegue Automático desde GitHub)
+
+El sitio es HTML/CSS/JS puro — no requiere servidor ni proceso de compilación. Las tres mejores opciones para publicarlo con despliegue automático al hacer `git push` son:
+
+---
+
+#### Opción A: GitHub Pages ⭐ (Recomendada — más simple)
+
+**Ventajas:** Gratuito, sin cuenta adicional, URL directa desde el repositorio actual.
+
+**Pasos:**
+1. Ir a: `https://github.com/jlomeli71/la_magia_del_ser/settings/pages`
+2. En **Source** seleccionar: `Deploy from a branch`
+3. En **Branch** seleccionar: `main` / `/ (root)`
+4. Guardar — en 1-2 minutos el sitio estará en:
+   `https://jlomeli71.github.io/la_magia_del_ser/`
+5. Cada `git push` a `main` actualiza el sitio automáticamente.
+
+**Limitación:** La URL incluye el nombre del repositorio (a menos que uses dominio propio).
+
+---
+
+#### Opción B: Netlify
+
+**Ventajas:** URL personalizable, dominio propio gratuito (`tudominio.netlify.app`), más fácil conectar dominio propio.
+
+**Pasos:**
+1. Crear cuenta en https://netlify.com (gratis)
+2. "Add new site" → "Import an existing project" → GitHub
+3. Seleccionar repositorio `la_magia_del_ser`
+4. En **Build settings** dejar todo en blanco (no hay proceso de build)
+5. Deploy — URL tipo: `https://el-estado-del-ser.netlify.app`
+6. Cada `git push` a `main` actualiza el sitio automáticamente.
+
+---
+
+#### Opción C: Vercel
+
+**Ventajas:** CDN muy rápido, URLs de preview por cada PR/branch, excelente para iterar.
+
+**Pasos:**
+1. Crear cuenta en https://vercel.com (gratis con GitHub)
+2. "Add New Project" → Import desde GitHub
+3. Seleccionar repositorio `la_magia_del_ser`
+4. Dejar configuración por defecto (detecta HTML estático)
+5. Deploy — URL tipo: `https://la-magia-del-ser.vercel.app`
+6. Cada `git push` a `main` actualiza el sitio automáticamente.
+
+---
+
+### 8. Agregar las Imágenes a la Página Web
+
+Actualmente las imágenes JPG están en el repositorio pero no se muestran en `index.html`.
+Pendiente: integrarlas en la sección de la Guía del Viajero o en cada panel de letras.
+
+### 9. Links de YouTube Pendientes
+
+Activar los links de YouTube conforme se suban los videos de las canciones 2-13.
+Para cada canción: cambiar `href="#"` por el link real y quitar `(próximamente)`.
