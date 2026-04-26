@@ -89,7 +89,7 @@ el_estado_del_ser/
 - Las instrucciones de Suno AI están incluidas en cada sección de canción en el README.md (en la web solo se eliminan conforme se publican los videos reales)
 - Los links de YouTube se activan progresivamente conforme se suben los videos
 - Las imágenes decorativas del .docx original no se incluyeron en el markdown (solo descripciones de prompt)
-- Canción 1 ya tiene link real de YouTube: https://youtu.be/PaUH2Qn-Brc?si=L3zllZRjOD8BAj-u
+- Canción 1 ya tiene link real de YouTube: https://youtu.be/jwO5Fk73F7E
 - Canción 2 ya tiene link real de YouTube: https://youtu.be/lVFkq6GPEgo
 - Álbum completo (playlist): https://www.youtube.com/playlist?list=PLOy2oQpyB4oVu2p7JVmVoqu2RQUsySqxL
 
@@ -148,7 +148,7 @@ Para cada canción: cambiar `href="#"` por el link real y quitar `(próximamente
 - ✅ "Outro" → "Final" en index.html (13 ocurrencias)
 - ✅ Secciones "Intro" eliminadas de la página web (mantenidas en README.md)
 - ✅ Bloques de instrucciones Suno AI eliminados de la página web (mantenidos en README.md)
-- ✅ Link YouTube Canción 1 actualizado: https://youtu.be/PaUH2Qn-Brc?si=L3zllZRjOD8BAj-u
+- ✅ Link YouTube Canción 1 actualizado: https://youtu.be/jwO5Fk73F7E
 - ✅ Modal YouTube embebido: al dar clic muestra imagen, título y reproductor en la misma página
 - ✅ Imágenes de canciones integradas en la Guía del Viajero (thumbnails 72×72px)
 - ✅ Datos (data-song, data-yt, data-img) en los 13 track-items y 13 lyric-panels
