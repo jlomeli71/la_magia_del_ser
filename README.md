@@ -722,7 +722,7 @@ Es el reconocimiento del Divino en el otro y en mí, el creador.
 Cada respiración es un acto de gratitud sagrado,
 Cada exhale, un regalo a lo que ya ha sido liberado.
 
-**Puente — Guía de Respiración** *(voz muy suave)*
+**Puente** *(voz muy suave)*
 Inhala... 1, 2, 3, 4, 5, 6, 7...
 Retén... 1, 2, 3, 4, 5, 6, 7...
 Exhala... 1, 2, 3, 4, 5, 6, 7...
@@ -785,7 +785,7 @@ No hay enojo que no tenga su raíz en mi interior.
 Lo siento por las memorias que atrajeron esta herida,
 Y le pido a la Divinidad que limpie esta energía contenida.
 
-**Puente — Transmutación**
+**Puente**
 *(Tambores que se vuelven más suaves)*
 Siento el fuego... lo honro... lo nombro...
 "Ira, te escucho, te veo, te agradezco tu aviso."
@@ -865,7 +865,7 @@ He sanado muchas heridas sin ver las mías aquí.
 Hoy rompo ese patrón, hoy me doy lo que negué,
 El abrazo más largo y más profundo que jamás me di.
 
-**Puente — El Abrazo**
+**Puente**
 *(Piano solo, muy suave)*
 Cierra los ojos...
 Imagina a tu Niño Interior frente a ti...
@@ -945,7 +945,7 @@ No hay camino oscuro cuando tengo un guía en mi destino.
 Limpio las memorias de fracaso, de pérdida y de daño,
 Y avanzo con fe hacia un nuevo año.
 
-**Puente — Cruzando el Umbral**
+**Puente**
 *(Música que se expande gradualmente)*
 Imagina que estás frente a una puerta...
 El miedo te dice: *"No puedes, no eres suficiente..."*
@@ -1031,7 +1031,7 @@ Sello cada canción con su mensaje interior.
 Sello cada lágrima que fue de sanación,
 Sello cada silencio que fue meditación.
 
-**Puente — Sellado**
+**Puente**
 *(Campanas espaciadas, silencio entre ellas)*
 *Anillo de Oro...* sellando mi campo de energía...
 *Ceeport...* limpiando continuamente...
