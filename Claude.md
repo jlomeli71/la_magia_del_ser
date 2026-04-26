@@ -140,8 +140,14 @@ Pendiente: integrarlas en la sección de la Guía del Viajero o en cada panel de
 
 ### 9. Links de YouTube Pendientes
 
-Activar los links de YouTube conforme se suban los videos de las canciones 3-13.
+Activar los links de YouTube conforme se suban los videos de las canciones 5-13.
 Para cada canción: cambiar `href="#"` por el link real y quitar `(próximamente)`.
+
+Links ya activados:
+- Canción 1: https://youtu.be/jwO5Fk73F7E
+- Canción 2: https://youtu.be/cvAq0jGg_E4
+- Canción 3: (ver git log)
+- Canción 4: https://youtu.be/vsuXi8I5WG4
 
 ## Tareas Completadas (Sesión Anterior)
 
