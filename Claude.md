@@ -90,7 +90,7 @@ el_estado_del_ser/
 - Los links de YouTube se activan progresivamente conforme se suben los videos
 - Las imágenes decorativas del .docx original no se incluyeron en el markdown (solo descripciones de prompt)
 - Canción 1 ya tiene link real de YouTube: https://youtu.be/jwO5Fk73F7E
-- Canción 2 ya tiene link real de YouTube: https://youtu.be/lVFkq6GPEgo
+- Canción 2 ya tiene link real de YouTube: https://youtu.be/cvAq0jGg_E4
 - Álbum completo (playlist): https://www.youtube.com/playlist?list=PLOy2oQpyB4oVu2p7JVmVoqu2RQUsySqxL
 
 ---
