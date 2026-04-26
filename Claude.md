@@ -81,7 +81,6 @@ el_estado_del_ser/
 
 ## Fuentes de Referencia
 
-- Documento original: `El_Estado_del_Ser.docx`
 - NotebookLM: https://notebooklm.google.com/notebook/b25d2e2e-9224-4ea4-b7a8-2a1c5369485f/
 - Paleta de colores: https://colorhunt.co/palette/eefabda0d5856984a9263b6a
 
@@ -130,20 +129,6 @@ El sitio es HTML/CSS/JS puro — no requiere servidor ni proceso de compilación
 3. Seleccionar repositorio `el_estado_del_ser`
 4. En **Build settings** dejar todo en blanco (no hay proceso de build)
 5. Deploy — URL tipo: `https://el-estado-del-ser.netlify.app`
-6. Cada `git push` a `main` actualiza el sitio automáticamente.
-
----
-
-#### Opción C: Vercel
-
-**Ventajas:** CDN muy rápido, URLs de preview por cada PR/branch, excelente para iterar.
-
-**Pasos:**
-1. Crear cuenta en https://vercel.com (gratis con GitHub)
-2. "Add New Project" → Import desde GitHub
-3. Seleccionar repositorio `el_estado_del_ser`
-4. Dejar configuración por defecto (detecta HTML estático)
-5. Deploy — URL tipo: `https://el-estado-del-ser.vercel.app`
 6. Cada `git push` a `main` actualiza el sitio automáticamente.
 
 ---
